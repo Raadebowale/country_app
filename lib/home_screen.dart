@@ -64,9 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(
           'Explore',
           style: GoogleFonts.poppins(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-          ),
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).textTheme.headlineLarge?.color),
         ),
         actions: [
           IconButton(
@@ -95,14 +95,20 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Row(
                 children: [
-                  const Icon(Icons.search),
+                  Icon(Icons.search, color: Theme.of(context).iconTheme.color),
                   const SizedBox(width: 10),
                   Expanded(
                     child: TextField(
                       controller: searchController,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: 'Search Country',
                         border: InputBorder.none,
+                        hintStyle: GoogleFonts.poppins(
+                          color: Theme.of(context).hintColor,
+                        ),
+                      ),
+                      style: GoogleFonts.poppins(
+                        color: Theme.of(context).textTheme.bodyMedium?.color,
                       ),
                     ),
                   ),
@@ -128,8 +134,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    title: Text(filteredCountries[index]['name']['common'] ??
-                        'Unknown'),
+                    title: Text(
+                      filteredCountries[index]['name']['common'] ?? 'Unknown',
+                      style: GoogleFonts.poppins(
+                        color: Theme.of(context).textTheme.bodyMedium?.color,
+                      ),
+                    ),
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(

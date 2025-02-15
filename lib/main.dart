@@ -1,15 +1,7 @@
 import 'package:country_app/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:country_app/provider/theme_provider.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
-/* void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => ThemeProvider(),
-    child: const MyApp(),
-  ));
-} */
 
 var kColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromRGBO(242, 244, 247, 1),
@@ -59,10 +51,6 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
           ),
-          /* ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ), */
           home: const HomeScreen(),
         );
       },

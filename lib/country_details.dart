@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:country_app/inline_text.dart';
 
 class CountryDetailScreen extends StatelessWidget {
   const CountryDetailScreen({super.key, required this.country});
@@ -104,39 +104,3 @@ class CountryDetailScreen extends StatelessWidget {
     );
   }
 }
-
-class InlineText extends StatelessWidget {
-  const InlineText({
-    super.key,
-    required this.title,
-    required this.countryInfo,
-  });
-
-  final String title;
-  final String countryInfo;
-
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        text: '$title: ',
-        children: [
-          TextSpan(
-            text: countryInfo,
-            style: GoogleFonts.poppins(
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-        ],
-        style: GoogleFonts.poppins(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
-      ),
-    );
-  }
-}
-/* country['flags'] != null
-  ? Image.network(country['flags']['png'], height: 100)
-  : const SizedBox.shrink(), */
